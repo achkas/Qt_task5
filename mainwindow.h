@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 #include<swatch.h>
-//#include <QTimer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -20,7 +19,6 @@ public:
 public slots:
     void Mmtimer();
     void Clear();
-    void Circle();
 
 signals:
 
