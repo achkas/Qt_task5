@@ -16,9 +16,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+
 public slots:
-    void Mmtimer();
-    void Clear();
+    void Mmtimer();    
 
 signals:
 
@@ -30,6 +30,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     Swatch *swatch;
+
 
 };
 #endif // MAINWINDOW_H

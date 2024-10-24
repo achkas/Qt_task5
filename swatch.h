@@ -14,27 +14,25 @@ public:
     bool ss=1;
     int nl=0;
     QTimer *timer;
-
-
     void StartStopwatch();
     void CirclSignal();
     void ClireSignal();
     int getLaptime();
-    int getCurrenttime();
+    int getCurrenttime();    
+    int getCurrent_decsectime();
 
-private:
-
+private:   
     int s=0;
     int ls,lm;
     int lms=0;
+    int msec;
+    int dec_sec;
 
 public slots:
     void strttimer();
 
 signals:
     void sgnl();
-    void sig_clire();
-
 };
 
 #endif // SWATCH_H

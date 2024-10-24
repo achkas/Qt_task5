@@ -5,7 +5,6 @@ Swatch::Swatch(QObject *parent)
     : QObject{parent}
 {
     timer=new QTimer(this);
-
     connect(timer, &QTimer::timeout, this, &Swatch::strttimer);
 }
 
@@ -24,7 +23,7 @@ void Swatch::StartStopwatch()
 
     if(ss==0)
     {
-        timer->start(100);
+        timer->start(1);
     }
 
 }
@@ -39,12 +38,9 @@ void Swatch::CirclSignal()
 
 void Swatch::ClireSignal()
 {
-
     s=0;
     nl=0;
     lms=0;
-    emit sig_clire();
-
 }
 
 int Swatch::getLaptime()
@@ -57,9 +53,26 @@ int Swatch::getCurrenttime()
     return s;
 }
 
+int Swatch::getCurrent_decsectime()
+{
+    return dec_sec;
+}
+
 void Swatch::strttimer()
 {
-    s++;
+    msec++;
+
+    if (msec>=100)
+    {
+        msec=0;
+        dec_sec++;
+    }
+
+    if(dec_sec>=10)
+    {
+        dec_sec=0;
+        s++;
+    }
 }
 
 
